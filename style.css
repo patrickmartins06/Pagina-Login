@@ -7,11 +7,11 @@
   --color-dark-100: #312d37;
   --color-dark-900: #000;
 
-  --color-purple-50: #00aeff;
-  --color-purple-100: #006aff;
-  --color-purple-200: #001062;
+  --color-blue-50: #4a80ff;
+  --color-blue-100: #4118ba;
+  --color-blue-200: #000d4e;
 
-  --color-gradient: linear-gradient(90deg, var(--color-purple-200), var(--color-purple-100), var(--color-purple-50))
+  --color-gradient: linear-gradient(90deg, var(--color-blue-200), var(--color-blue-100), var(--color-blue-50))
 
 }
 
@@ -29,7 +29,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
+
 
 #login_form{
   background-color:var(--color-light-50) ;
@@ -40,6 +42,7 @@
   gap: 30px;
   box-shadow: 5px 5px 8px rgba(0 , 0, 0, 0.336);
   height: fit-content;
+  animation: dark-to-light 0.3s ease-in-out;
 }
 
 #form_header{
@@ -57,7 +60,7 @@
   content: '';
   width: 40%;
   margin-left: 2px;
-  background-color: var(--color-purple-50);
+  background-color: var(--color-blue-50);
   height: 3px;
   bottom: 4px;
   border-radius: 5px;
@@ -103,12 +106,12 @@
   gap: 15px;
   padding: 3px;
   cursor: text;
-  border-bottom: 1px solid var(--color-purple-50);
+  border-bottom: 1px solid var(--color-blue-50);
 }
 
 .input-field i {
   font-size: 18px;
-  color: var(--color-dark-900);
+  color: var(--color-blue-50);
 }
 
 .input-field input{
@@ -131,20 +134,56 @@ outline: none;
 }
 
 #forgot_password a:hover{
-  color: var(--color-purple-50);
+  color: var(--color-blue-50);
 
 }
 
 #login_button {
   border: none;
-  background: var(--color-light-50);
+  background: var(--color-blue-100);
   padding: 7px;
   font-size: 18px;
   border-radius: 3px;
   font-weight: bold;
   cursor: pointer;
+  color: var(--color-light-50);
 }
 
 #login_button:hover {
 transform: scale(1.05);
+}
+
+.dark#login_form{
+  color: var(--color-light-50);
+  background-color: var(--color-dark-100);
+  animation: light-to-dark 0.3s ease-in-out;
+
+}
+.dark#login_form .input-field input,
+.dark#login_form .input-field i {
+  color: var(--color-light-50);
+}
+
+.dark#login_form .input-field i {
+  background-color: var();
+}
+
+@keyframes dark-to-light {
+  0% {
+    background-color: var(--color-dark-100);
+  }
+  100%{
+    background-color: var(--color-light-50);
+  }
+  
+}
+
+@keyframes light-to-dark {
+  0% {
+    background-color: var(--color-light-50);
+  }
+  100%{
+    background-color: var(--color-dark-100);
+  }
+  
 }
